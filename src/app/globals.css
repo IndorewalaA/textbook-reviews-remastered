@@ -1,2 +1,16 @@
+/* globals.css */
+
+/* Tailwind's default styles */
 @import "tailwindcss";
 
+/* Custom theme via @layer */
+@layer base {
+  :root {
+    --bg-light-brown: #FAF2E4;
+  }
+}
+
+/* You can now use the custom variable directly */
+.bg-light-brown {
+  background-color: var(--bg-light-brown);
+}
