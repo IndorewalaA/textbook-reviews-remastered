@@ -7,10 +7,15 @@
 @layer base {
   :root {
     --bg-light-brown: #FAF2E4;
+    --tx-dark-brown: #4A2219;
   }
 }
 
 /* You can now use the custom variable directly */
 .bg-light-brown {
   background-color: var(--bg-light-brown);
+}
+
+.tx-dark-brown {
+  color: var(--tx-dark-brown);
 }
