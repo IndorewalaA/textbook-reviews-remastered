@@ -5,7 +5,7 @@ import { nunito_reg } from './components/fonts';
 
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col">
+    <main className="h-screen flex flex-col">
       <div><NavBar/></div>
       <div className="flex flex-col flex-grow justify-center items-center">
         <h1 className={`text-7xl mb-8 font-bold tx-dark-brown ${nunito_reg.className}`}>
@@ -13,6 +13,6 @@ export default function Home() {
         </h1>
         <SearchBarLarge/>
       </div>
-    </div>
+    </main>
   );
 }
