@@ -1,8 +1,18 @@
-import Image from "next/image";
+import './globals.css';
+import NavBar from './components/NavBar';
+import { SearchBarLarge } from './components/Search';
+import { nunito_reg } from './components/fonts';
 
 export default function Home() {
   return (
-    <div>
+    <div className="h-screen flex flex-col">
+      <div><NavBar/></div>
+      <div className="flex flex-col flex-grow justify-center items-center">
+        <h1 className={`text-7xl mb-8 font-bold tx-dark-brown ${nunito_reg.className}`}>
+          Find a Textbook!
+        </h1>
+        <SearchBarLarge/>
+      </div>
     </div>
   );
 }
