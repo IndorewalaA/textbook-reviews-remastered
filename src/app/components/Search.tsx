@@ -11,8 +11,8 @@ const SearchBarSmall = () => {
             type="text"
             value={query}
             onChange={handleSearchChange}
-            placeholder="Search..."
-            className="p-2 rounded-lg bg-orange-50 text-gray border w-md"
+            placeholder="Search ISBN, Book Title, Author..."
+            className="p-2 px-8 rounded-full bg-orange-50 text-gray border-1 w-lg text-md"
         />
     );
 };

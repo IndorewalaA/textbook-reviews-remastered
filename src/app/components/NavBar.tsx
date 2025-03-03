@@ -15,9 +15,11 @@ export default function NavBar() {
 
     return (
         <div className="flex flex-row justify-between p-8 tx-dark-brown">
-            <h1 className={`text-2xl bg-gradient-to-r from-orange-600 to-blue-800 bg-clip-text text-transparent ${poppins_reg.className}`}>
-                 RateYour<span className={poppins_bold.className}>Textbooks</span>
-            </h1>
+            <Link 
+                href="/"
+                className={`text-2xl bg-gradient-to-r from-orange-600 to-blue-800 bg-clip-text text-transparent ${poppins_reg.className}`}>
+                    RateYour<span className={poppins_bold.className}>Textbooks</span>
+            </Link>
             {!isHome && (<SearchBarSmall/>)}
             <div className="space-x-4 text-lg">
                 <Link
