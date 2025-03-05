@@ -6,16 +6,16 @@
 /* Custom theme via @layer */
 @layer base {
   :root {
-    --bg-light-brown: #FAF2E4;
-    --tx-dark-brown: #4A2219;
+    --light-brown: #F8EDE3;
+    --dark-brown: #8D493A;
   }
 }
 
 /* You can now use the custom variable directly */
-.bg-light-brown {
-  background-color: var(--bg-light-brown);
+.light-brown {
+  background-color: var(--light-brown);
 }
 
-.tx-dark-brown {
-  color: var(--tx-dark-brown);
+.dark-brown {
+  color: var(--dark-brown);
 }

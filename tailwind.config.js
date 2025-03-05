@@ -7,8 +7,8 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          'light-brown': '#FAF2E4',
-          'dark-brown': '#4A2219',
+          'light-brown': '#F8EDE3',
+          'dark-brown': '#8D493A',
         },
         borderWidth: {
           '1': '1px',

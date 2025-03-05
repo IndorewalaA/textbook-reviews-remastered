@@ -14,7 +14,7 @@ export default function NavBar() {
     const activeStyle: string = "text-brown-600 font-bold border-b-2 border-brown-600";
 
     return (
-        <div className="flex flex-row justify-between p-8 tx-dark-brown">
+        <div className="flex flex-row justify-between p-8 dark-brown">
             <Link 
                 href="/"
                 className={`text-2xl bg-gradient-to-r from-orange-600 to-blue-800 bg-clip-text text-transparent ${poppins_reg.className}`}>
