@@ -28,7 +28,7 @@ const Login = () => {
         <main className={`h-screen flex flex-col ${nunito_reg.className}`}>
             <NavBar />
             <div className="flex flex-col items-center justify-center flex-grow dark-brown border-4 bg-[#DFD3C3] mx-120 my-20 rounded-xl">
-                    <h2 className={`text-2xl font-bold mb-4 ${poppins_bold.className}`}>Enter Email and Password</h2>
+                    <h2 className={`text-2xl font-bold mt-14 mb-4 ${poppins_bold.className}`}>Enter Email and Password</h2>
                     <form onSubmit={handleLogin} className="flex flex-col space-y-4 w-96">
                         <input
                             type="email"
@@ -36,7 +36,7 @@ const Login = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Email"
                             required
-                            className="p-2 px-4 border-2 dark-brown bg-orange-50 border-[#4A2219] rounded-full"
+                            className="p-2 px-4 border-2 dark-brown bg-orange-50 border-[#D0B8A8] rounded-full"
                         />
                         <input
                             type="password"
@@ -44,17 +44,22 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Password"
                             required
-                            className="p-2 px-4 border-2 dark-brown bg-orange-50 border-[#4A2219] rounded-full"
+                            className="p-2 px-4 border-2 dark-brown bg-orange-50 border-[#D0B8A8] rounded-full"
                         />
                         <button type="submit" className="p-2 border bg-[#4A2219] rounded-xl font-semibold text-lg text-white">
                             Login
                         </button>
                     </form>
-                    {error && (
-                        <p className="mt-2 text-red-600 border border-red-600 p-2 rounded bg-red-100">
-                            {error}
-                        </p>
-                    )}
+                    <button>
+                        Forgot Password?
+                    </button>
+                    <p
+                        className={`mt-2 text-red-600 border border-red-600 p-2 rounded bg-red-100 transition-opacity ${
+                            error ? "opacity-100 visible" : "opacity-0 invisible"
+                        }`}
+                    >
+                        {error || "Placeholder text"}
+                    </p>
             </div>
         </main>
     );

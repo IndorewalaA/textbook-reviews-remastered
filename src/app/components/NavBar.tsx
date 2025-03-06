@@ -26,7 +26,7 @@ export default function NavBar() {
     }
 
     const isActive = (path: string) => pathname === path;
-    const activeStyle: string = "text-brown-600 font-bold border-b-2 border-brown-600";
+    const activeStyle: string = "font-bold border-b-2";
 
     return (
         <div className="flex flex-row justify-between p-8 dark-brown">

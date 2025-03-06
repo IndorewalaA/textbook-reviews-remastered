@@ -12,7 +12,7 @@ const SearchBarSmall = () => {
             value={query}
             onChange={handleSearchChange}
             placeholder="Search ISBN, Book Title, Author..."
-            className="p-2 px-8 rounded-full bg-orange-50 text-gray border-1 w-lg text-md"
+            className="p-2 px-8 rounded-full bg-orange-50 text-gray border-2 w-lg text-md border-[#D0B8A8]"
         />
     );
 };
@@ -28,7 +28,7 @@ const SearchBarLarge = () => {
             value={query}
             onChange={handleSearchChange}
             placeholder="Search ISBN, Book Title, Author..."
-            className="p-4 px-8 rounded-full bg-orange-50 text-gray border-2 w-xl text-lg"
+            className="p-4 px-8 rounded-full bg-orange-50 text-gray border-3 border-[#D0B8A8] w-xl text-lg"
         />
     );
 }
