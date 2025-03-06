@@ -10,6 +10,7 @@ const SignUp = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
+    const [message, setMessage] = useState("");
     const router = useRouter();
 
     const handleSignUp = async (e: React.FormEvent) => {
@@ -33,7 +34,7 @@ const SignUp = () => {
         <main className={`h-screen flex flex-col ${nunito_reg.className}`}>
             <NavBar />
             <div className="flex flex-col items-center justify-center flex-grow dark-brown border-4 bg-[#DFD3C3] mx-120 my-20 rounded-xl">
-                <h2 className={`text-2xl font-bold mt-14 mb-4 ${poppins_bold.className}`}>Create an Account</h2>
+                <h2 className={`text-2xl font-bold mt-24 mb-4 ${poppins_bold.className}`}>Create an Account</h2>
                 <form onSubmit={handleSignUp} className="flex flex-col space-y-4 w-96">
                     <input
                         type="email"
@@ -59,11 +60,14 @@ const SignUp = () => {
                         Forgot Password?
                 </button>
                 <p
-                        className={`mt-2 text-red-600 border border-red-600 p-2 rounded bg-red-100 transition-opacity ${
-                            error ? "opacity-100 visible" : "opacity-0 invisible"
-                        }`}
-                    >
-                        {error || "Placeholder text"}
+                    className={`mt-2 text-red-600 border border-red-600 p-2 rounded bg-red-100 transition-opacity ${
+                        error ? "opacity-100 visible" : "opacity-0 invisible"
+                    }`}
+                >
+                    {error || "Placeholder text"}   
+                </p>
+                <p className={`mt-2 text-green-600 border border-green-600 p-2 rounded bg-green-100 transition-opacity ${message ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+                    {message || "Placeholder text"}
                 </p>
             </div>
         </main>
