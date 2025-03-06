@@ -6,7 +6,7 @@ import { nunito_reg } from './components/fonts';
 export default function Home() {
   return (
     <main className="h-screen flex flex-col dark-brown">
-      <div className="shadow-md"><NavBar/></div>
+      <div><NavBar/></div>
       <div className="flex flex-col flex-grow justify-center items-center">
         <h1 className={`text-7xl mb-8 font-bold ${nunito_reg.className}`}>
           Find a Textbook!
