@@ -52,7 +52,7 @@ const SignUp = () => {
                         required
                         className="p-2 px-4 border-2 dark-brown bg-orange-50 border-[#D0B8A8] rounded-full"
                     />
-                    <button type="submit" className="p-2 border bg-[#4A2219] rounded-xl font-semibold text-lg text-white">
+                    <button type="submit" className="p-2 border bg-[#4A2219] rounded-xl font-semibold text-lg text-white cursor-pointer">
                         Register
                     </button>
                 </form>

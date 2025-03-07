@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 
-export default function Catalog() {
+export default function Profile() {
     return(
         <main>
             <NavBar/>
