@@ -7,15 +7,16 @@ import { poppins_reg, poppins_bold } from './fonts';
 import { SearchBarSmall } from './Search';
 import { auth } from '../../../firebase';
 
-
 export default function NavBar() {
     const [user, setUser] = useState<User | null>(null);
+    const [loading, setLoading] = useState(true); // Add loading state
     const pathname = usePathname()
     const isHome = pathname === "/"
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser)
+            setUser(currentUser);
+            setLoading(false); // Set loading to false after checking auth state
         });
 
         return () => unsubscribe();
@@ -27,6 +28,10 @@ export default function NavBar() {
 
     const isActive = (path: string) => pathname === path;
     const activeStyle: string = "font-bold border-b-2";
+
+    if (loading) {
+        return <div style={{ height: '80px' }} />; // Maintain navbar height during loading
+    }
 
     return (
         <div className="flex flex-row justify-between p-8 dark-brown">
