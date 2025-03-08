@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 
-export default function Catalog() {
+export default function Courses() {
     return(
         <main>
             <NavBar/>

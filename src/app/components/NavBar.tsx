@@ -43,8 +43,8 @@ export default function NavBar() {
             {!isHome && (<SearchBarSmall/>)}
             <div className="space-x-4 text-lg">
                 <Link
-                    href="/catalog"
-                    className={isActive("/catalog") ? activeStyle : "hover:text-orange-600 transition-colors"}
+                    href="/courses"
+                    className={isActive("/courses") ? activeStyle : "hover:text-orange-600 transition-colors"}
                 >
                     Courses
                 </Link>
