@@ -1,13 +1,13 @@
 API Key file needed for full functionality! Message me to receive it.
 This project uses Next.JS, TypeScript, Tailwind CSS, and Firebase (solely for Auth atm).
 
-First, install the required dependencies,
+First, install the required dependencies:
 
 ```bash
 npm install
 ```
 
-then run the development server:
+Next, run the development server:
 
 ```bash
 npm run dev
