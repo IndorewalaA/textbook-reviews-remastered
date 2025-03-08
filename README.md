@@ -1,4 +1,5 @@
 API Key file needed for full functionality! Message me to receive it.
+This project uses Next.JS, TypeScript, Tailwind CSS, and Firebase (solely for Auth atm).
 
 First, run the development server:
 
