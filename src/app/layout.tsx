@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`light_brown ${nunito_reg.className}`}>
+      <body className={`light-brown ${nunito_reg.className}`}>
         {children}
       </body>
     </html>
