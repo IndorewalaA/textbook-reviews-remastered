@@ -42,3 +42,6 @@ next-env.d.ts
 
 .next/
 node_modules/
+
+
+/backend/config/firebase-admin-sdk.json
