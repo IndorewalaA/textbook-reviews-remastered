@@ -1,4 +1,4 @@
-API Key file needed for full functionality! Message me to receive it.
+API Key files needed for full functionality! Message me to receive them.
 This project uses Next.JS, TypeScript, Tailwind CSS, and Firebase (solely for Auth atm).
 
 First, install the required dependencies in BOTH the frontend and backend folders.:
