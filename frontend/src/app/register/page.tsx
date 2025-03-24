@@ -23,7 +23,23 @@ const SignUp = () => {
 
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            console.log('User signed up: ', userCredential.user);
+            const user = userCredential.user;
+            const response = await fetch("http://localhost:5000/api/users/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    firebaseID: user.uid,
+                    email: user.email,
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to save user in database.");
+            }
+
+            console.log("User saved to database.");
             router.push("/");
         } catch(err: any) {
             setError(err.message);
@@ -57,14 +73,14 @@ const SignUp = () => {
                     </button>
                 </form>
                 <button className="opacity-0 invisible">
-                        Forgot Password?
+                    Forgot Password?
                 </button>
                 <p
                     className={`mt-2 text-red-600 border border-red-600 p-2 rounded bg-red-100 transition-opacity ${
                         error ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
                 >
-                    {error || "Placeholder text"}   
+                    {error || "Placeholder text"}
                 </p>
                 <p className={`mt-2 text-green-600 border border-green-600 p-2 rounded bg-green-100 transition-opacity ${message ? "opacity-100 visible" : "opacity-0 invisible"}`}>
                     {message || "Placeholder text"}

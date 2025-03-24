@@ -22,12 +22,12 @@ app.get('/', (req, res) => {
   res.send('Hello from Express backend!');
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/courses', require('./routes/courseRoutes'));
 app.use('/api/textbooks', require('./routes/textbookRoutes'));
 app.use('/api/reviews', require('./routes/reviewRoutes'));
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
