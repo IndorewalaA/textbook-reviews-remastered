@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail} from 'firebase/auth';
 import { useRouter } from "next/navigation";
 import { auth } from "@/../../firebase";
+import firebase from "firebase/compat/app";
 
 const Login = () => {
     const [email, setEmail] = useState<string>('');
@@ -15,12 +16,31 @@ const Login = () => {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError(null);
+        setMessage("");
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            console.log('Sign in successful!!');
+            const user = userCredential.user;
+            const response = await fetch("http://localhost:5000/api/users/login", {
+                method: "POST", 
+                headers: {
+                    "Content-Type": "application/json", 
+                },
+                body: JSON.stringify({
+                    firebaseID: user.uid,
+                    email: user.email,
+                }),
+            });
+            if(!response.ok) {
+                throw new Error('User not registered in backend.');
+            } 
+            else {
+                console.log('Sign in successful!!');
+            }
             router.push("/");
         }
         catch (error: any) {
+            console.error("Login Error: ", error);
             setError(error.message);
         }
     };

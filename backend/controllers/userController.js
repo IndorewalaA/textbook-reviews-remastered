@@ -20,6 +20,18 @@ const createUser = async (req, res) => {
     }
 };
 
+const loginUser = async(req, res) => {
+    try {
+        const { firebaseID } = req.body;
+        const user = await User.findOne({firebaseID});
+        if (!user) return  res.status(404).json({message: "User not found."});
+        res.status(200).json({message: "Account created!"});
+    } catch(error) {
+        console.error("Error logging in: ", error);
+        res.status(500).json({error: error.message});
+    }
+};
+
 // Get current user details
 const getCurrentUser = async (req, res) => {
     try {
@@ -31,4 +43,4 @@ const getCurrentUser = async (req, res) => {
     }
 };
 
-module.exports = { createUser, getCurrentUser };
+module.exports = { createUser, getCurrentUser, loginUser };

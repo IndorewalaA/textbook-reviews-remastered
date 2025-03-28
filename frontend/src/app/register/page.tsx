@@ -15,12 +15,10 @@ const SignUp = () => {
 
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
-
         if (password.length < 8) {
             setError("Password must be at least 8 characters long.");
             return;
         }
-
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
